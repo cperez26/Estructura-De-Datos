@@ -1,4 +1,4 @@
-class Ruleta{
+class Dado{
     constructor(resultados = 0){
         this._resultados = resultados;
         this._contador = [1,2,3,4,5,6,7];
@@ -22,7 +22,7 @@ class Ruleta{
 class Jugador{
     constructor(posicion = 0){
         this._posicion = posicion;
-        this._ruleta = new Ruleta();
+        this._ruleta = new Dado();
     }
 
     get posicion(){ return this._posicion; }
