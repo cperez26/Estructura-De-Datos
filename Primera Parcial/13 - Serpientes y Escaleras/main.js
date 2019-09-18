@@ -74,34 +74,34 @@ class Tabla{
         let jugador1 = new Jugador();
         let jugador2 = new Jugador();
         do {
-        console.log("Jugador1: " + jugador1.Avanzar());
-        console.log("Jugador2: "+ jugador2.Avanzar());
+        console.log("Carlos: " + jugador1.Avanzar());
+        console.log("Emilio: "+ jugador2.Avanzar());
 
         //jugador1
         if (casillas[jugador1.posicion] === 1) {
             jugador1.Escalera();
-            console.log("Caiste en una Escalera: " + jugador1.posicion);            
+            console.log("Carlos caiste en una Escalera: " + jugador1.posicion);            
         }
         if (casillas[jugador1.posicion] === 0) {
             jugador1.Serpiente();
-            console.log("Caiste en una Serpiente: " + jugador1.posicion);
+            console.log("Carlos caiste en una Serpiente: " + jugador1.posicion);
         }
         //Jugador2
         if (casillas[jugador2.posicion] === 1) {
             jugador2.Escalera();
-            console.log("Caiste en una Escalera: " + jugador2.posicion);            
+            console.log("Emilio caiste en una Escalera: " + jugador2.posicion);            
         }
         if (casillas[jugador2.posicion] === 0) {
             jugador2.Serpiente();
-            console.log("Caieste en una Serpiente: " + jugador2.posicion);
+            console.log("Emilio caieste en una Serpiente: " + jugador2.posicion);
         }
 
         } while (jugador1.posicion <100 && jugador2.posicion <100);
 
         if (jugador1.posicion > jugador2.posicion) {
-            return console.log("Jugador1 wins");
+            return console.log("Carlos Gana");
         } else{
-            return console.log("Jugador2 wins");
+            return console.log("Emilio Gana");
         }
     }
 }
