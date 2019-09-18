@@ -55,18 +55,18 @@ class Tabla{
         casillas[11]=1;
         casillas[24]=1;
         casillas[39]=1;
-        casillas[40]=1;
+        casillas[44]=1;
         casillas[52]=1;
         casillas[68]=1;
         casillas[79]=1;
 
         casillas[99]=0;
-        casillas[80]=0;
-        casillas[70]=0;
-        casillas[60]=0;
-        casillas[50]=0;
-        casillas[40]=0;
-        casillas[30]=0;
+        casillas[87]=0;
+        casillas[72]=0;
+        casillas[64]=0;
+        casillas[58]=0;
+        casillas[46]=0;
+        casillas[31]=0;
         casillas[20]=0;
 
         console.log(casillas)
