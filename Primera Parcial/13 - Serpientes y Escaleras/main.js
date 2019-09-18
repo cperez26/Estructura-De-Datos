@@ -59,6 +59,8 @@ class Tabla{
         casillas[52]=1;
         casillas[68]=1;
         casillas[79]=1;
+        casillas[84]=1;
+        casillas[95]=1;
 
         casillas[99]=0;
         casillas[87]=0;
@@ -68,6 +70,8 @@ class Tabla{
         casillas[46]=0;
         casillas[31]=0;
         casillas[20]=0;
+        casillas[16]=0;
+        casillas[9]=0;
 
         console.log(casillas)
 
@@ -96,6 +100,7 @@ class Tabla{
             console.log("Emilio caieste en una Serpiente: " + jugador2.posicion);
         }
 
+        //GANADOR
         } while (jugador1.posicion <100 && jugador2.posicion <100);
 
         if (jugador1.posicion > jugador2.posicion) {
