@@ -80,20 +80,20 @@ class Tabla{
         //jugador1
         if (casillas[jugador1.posicion] === 1) {
             jugador1.Escalera();
-            console.log("Escalera: " + jugador1.posicion);            
+            console.log("Caiste en una Escalera: " + jugador1.posicion);            
         }
         if (casillas[jugador1.posicion] === 0) {
             jugador1.Serpiente();
-            console.log("Serpiente: " + jugador1.posicion);
+            console.log("Caiste en una Serpiente: " + jugador1.posicion);
         }
         //Jugador2
         if (casillas[jugador2.posicion] === 1) {
             jugador2.Escalera();
-            console.log("Escalera: " + jugador2.posicion);            
+            console.log("Caiste en una Escalera: " + jugador2.posicion);            
         }
         if (casillas[jugador2.posicion] === 0) {
             jugador2.Serpiente();
-            console.log("Serpiente: " + jugador2.posicion);
+            console.log("Caieste en una Serpiente: " + jugador2.posicion);
         }
 
         } while (jugador1.posicion <100 && jugador2.posicion <100);
