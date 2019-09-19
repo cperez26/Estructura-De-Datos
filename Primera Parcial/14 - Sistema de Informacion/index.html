@@ -11,22 +11,46 @@
 <h2>Agrega un Nuevo Articulo</h2>
 
 <body>
-    <h3>Agregar Articulo</h3>
-    <form>
-        <label for="codigo">Código: </label>
-        <input id="codigo" type="number" value="1" disabled>
-        <label for="nombre">Nombre: </label>
-        <input id="nombre" type="text" value="Nombre">
-        <label for="precio">Precio: </label>
-        <input id="precio" type="number" value="$0000">
-        <label for="cantidad">Cantidad: </label>
-        <input id="cantidad" type="number" value="0">
-        <label for="Descripcion">Descripción: </label>
-        <input id="descripcion" type="text" value="Descripcion">
-        <label for="posicion">Posición: </label>
-        <input id="posicion" type="number" min="0">
-        <button id="btnAdd" type="button">Agregar</button>
-    </form>
+    <section>
+        <h2>Opciones</h2>
+        <h3>Agregar Articulo</h3>
+        <form>
+            <label for="codigo">Código: </label>
+            <input id="codigo" type="number" value="1" disabled>
+            <label for="nombre">Nombre: </label>
+            <input id="nombre" type="text" value="Nombre">
+            <label for="precio">Precio: </label>
+            <input id="precio" type="number" value="$0000">
+            <label for="cantidad">Cantidad: </label>
+            <input id="cantidad" type="number" value="0">
+            <label for="Descripcion">Descripción: </label>
+            <input id="descripcion" type="text" value="Descripcion">
+            <label for="posicion">Posición: </label>
+            <input id="posicion" type="number" min="0">
+            <button id="btnAdd" type="button">Agregar</button>
+        </form>
+        <h3>Buscar producto</h3>
+        <form>
+            <label for="buscarCodigo">Código: </label>
+            <input id="buscarCodigo" type="number">
+            <button id="btnBuscar" type="button">Buscar</button>
+            <div id="productoEncontrado"></div>
+        </form>
+        <h3>Eliminar producto</h3>
+        <form>
+            <label for="borrarCodigo">Código: </label>
+            <input id="borrarCodigo" type="number">
+            <button id="btnDelete" type="button">Eliminar</button>
+        </form>
+        <br>
+        <div>
+            <button id="btn">Generar reporte</button>
+        </div>
+    </section>
+    <aside>
+        <h2>Reporte</h2>
+        <article id="reporte"></article>
+    </aside>
 </body>
 <script src="./main.js" type="module"></script>
 
