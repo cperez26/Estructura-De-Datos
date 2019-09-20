@@ -30,5 +30,63 @@ export default class Orden{
         } else
             alert('Esta Posicion NO es Válida');
     }
+
+    busqueda(codigo){
+        codigo = parseInt(codigo);
+        let encontrado = '';
+        if (this._existe(codigo)) {
+            this._estructura.forEach(producto => {
+                if (producto.codigo === codigo) {
+                    encontrado = producto;
+                    return;
+                }
+            });
+        } else {
+            alert('Producto No Encontrado');
+        }
+
+        return encontrado;
+    }
+
+    borrar(codigo){
+        codigo = parseInt(codigo);
+        if (this._existe(codigo)) {
+            if (codigo != this.estrutura.length) {
+                for (let i = codigo - 1; i < this._estructura.length - 1; i++) {
+                    this._estructura[i] = this._estructura[i + 1];
+                }
+                this._estructura.pop();
+            } else
+                this._estructura.pop();
+            alert('Se ha Eliminado con Exito');
+        } else {
+            alert('Código no Encontrado, por favor Intentelo de Nuevo');
+        }
+    }
+
+    _existe(codigo){
+        let existe = false;
+        for (let i = 0; i < this._estructura.length; i++) {
+            if (this._estructura[i].codigo === codigo) {
+                existe = true;
+                break;
+            }
+        }
+
+        return existe;
+    }
+
+    reporte(){
+        this._articulo.innerHTML = '';
+        let reporte = new Array();
+
+        for (let i = 0; i < this._estructura.length; i++) {
+            reporte[i] = document.createElement('reporte');
+        }
+
+        for (let i = 0; i < this._estructura.length; i++) {
+            reporte[i].innerHTML = this._estructura[i].toString();
+            this._articulo.appendChild(reporte[i]);
+        }
     }
 }
