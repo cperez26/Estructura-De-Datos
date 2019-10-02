@@ -6,7 +6,7 @@ export default class Estructura {
         this._limite = -1;
     }
 
-    get structura() {
+    get estructura() {
         return this._estructura;
     }
 

@@ -2,7 +2,7 @@ import Estructura from "./orden.js";
 import Articulo from "./articulo.js";
 
 var inventory = new Estructura(new Array(20));
-var tagArticle = document.querySelector('#articleReport');
+var tagArticle = document.querySelector('#reporte');
 
 
 document.querySelector('#btnAdd').addEventListener('click', () => {
@@ -24,7 +24,7 @@ document.querySelector('#btnAdd').addEventListener('click', () => {
 document.querySelector('#btnBuscar').addEventListener('click', () => {
     let tagDiv = document.querySelector('#productoEncontrado');
     let codigo = Number(document.querySelector('#buscarCodigo').value);
-    let objReturned = inventory.query(codigo).toString();
+    let objReturned = inventory.buscar(codigo).toString();
 
     tagDiv.innerHTML = "";
     if (objReturned != "-1")
@@ -35,7 +35,7 @@ document.querySelector('#btnBuscar').addEventListener('click', () => {
 
 document.querySelector('#btnBorrar').addEventListener('click', () => {
     let codigo = Number(document.querySelector('#borrarCodigo').value);
-    if (inventory.delete(codigo))
+    if (inventory.borrar(codigo))
         alert('El producto se elimino correctamente');
     else
         alert('No se encontro el producto');
