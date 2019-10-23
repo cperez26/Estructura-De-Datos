@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Listas Circulares</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Estaciones</h1>
+    </header>
+    <section>
+        <h2>Opciones</h2>
+
+        <h3>Añadir Estacion</h3>
+        <form>
+            <label for="nombre">Nombre: </label>
+            <input id="nombre" type="text">
+            <label for="minutos">Minutos: </label>
+            <input id="minutos" type="number">
+            <label for="posicion">Posicion: </label>
+            <input id="posicion" type="number">
+            <button id="btnAdd" type="button">Añadir</button>
+        </form>
+
+        <h3>Buscar Estacion</h3>
+        <form>
+            <label for="buscarNombre">Nombre: </label>
+            <input id="buscarNombre" type="text">
+            <button id="btnBuscar" type="button">Buscar</button>
+            <div id="estacionEncontrada"></div>
+        </form>
+
+        <h3>Borrar Estacion</h3>
+        <form>
+            <label for="borrarNombre">Nombre: </label>
+            <input id="borrarNombre" type="text">
+            <button id="btnBorrar" type="button">Borrar</button>
+        </form>
+        <br>
+
+        <div id="separation">
+            <form>
+                <label for="estacionInicial">Estacion Inicial:</label>
+                <input id="estacionInicial" type="text" value="Station 1">
+                <label for="tiempoInicio">Tiempo Inicio:</label>
+                <input id="tiempoInicio" type="number">
+                <label for="tiempoFin">Tiempo Fin:</label>
+                <input id="tiempoFin" type="number">
+                <br>
+                <br>
+                <button id="btnCrearRuta" class="btnCrearRuta" type="button">Ver Ruta</button>
+            </form>
+        </div>
+    </section>
+    
+    <aside>
+        <h2>Ruta</h2>
+        <article></article>
+    </aside>
+    <br>
+</body>
+<script src="./main.js" type="module"></script>
+
+</html>
