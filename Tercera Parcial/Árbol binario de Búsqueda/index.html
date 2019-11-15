@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Árbol binario de Busqueda</title>
+</head>
+<h2>Agrega un Nuevo Articulo</h2>
+
+<body>
+    <section>
+        <h2>Opciones</h2>
+        <h3>Agregar Articulo</h3>
+        <form>
+            <label for="codigo">Codigo: </label>
+            <input id="codigo" type="number" value="001">
+            <label for="nombre">Nombre: </label>
+            <input id="nombre" type="text" value="Nombre">
+            <label for="precio">Precio: </label>
+            <input id="precio" type="number">
+            <label for="cantidad">Cantidad: </label>
+            <input id="cantidad" type="number" value="0">
+            <label for="Descripcion">Descripción: </label>
+            <input id="descripcion" type="text" value="Descripcion">
+            <label for="posicion">Posición: </label>
+            <input id="posicion" type="number" min="0">
+            <button id="btnAdd" type="button">Agregar</button>
+        </form>
+        <h3>Buscar producto</h3>
+        <form>
+            <label for="buscarCodigo">Codigo: </label>
+            <input id="buscarCodigo" type="number">
+            <button id="btnBuscar" type="button">Buscar</button>
+            <div id="productoEncontrado"></div>
+        </form>
+        <h3>Eliminar producto</h3>
+        <form>
+            <label for="eliminarCodigo">Codigo:</label>
+            <input id="eliminarCodigo" type="number">
+            <button id="btnEliminar">Eliminar</button>
+        </form>
+        <br>
+        <div id="separation">
+            <button id="btnReporteInOrder" type="button" class="btnReporteInOrder">Reporte InOrder</button>
+            <button id="btnReportePreOrder" type="button" class="btnReportePreOrder">Reporte PreOrder</button>
+            <button id="btnReportePostOrder" type="button" class="btnReportePostOrder">Reporte PostOrder</button>
+        </div>
+    </section>
+    <aside>
+        <h2>Repote</h2>
+        <article id="reporte"></article>
+    </aside>
+</body>
+<script src="./main.js" type="module"></script>
+
+</html>
