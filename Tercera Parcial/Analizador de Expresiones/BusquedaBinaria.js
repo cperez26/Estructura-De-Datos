@@ -58,7 +58,7 @@ export default class BusquedaBinaria {
     }
 
     _InOrderRecursiva(raiz){
-        if (root != null) {
+        if (raiz != null) {
             this._InOrderRecursiva(raiz.izquierda);
             this._nodes += raiz.toString() + '<br>';
             this._inOrderRecursiva(raiz.derecha);
