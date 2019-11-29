@@ -13,7 +13,7 @@ export default class Producto{
         return this._izquierda;
     }
 
-    get _derecha(){
+    get derecha(){
         return this._derecha;
     }
 
