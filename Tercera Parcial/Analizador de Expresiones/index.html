@@ -1,130 +1,22 @@
-//Listas circulares//
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Listas Circulares</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Calcular expresiones</title>
 </head>
-
 <body>
-    <header>
-        <h1>Estaciones</h1>
-    </header>
-    <section>
-        <h2>Opciones</h2>
-
-        <h3>Añadir Estacion</h3>
-        <form>
-            <label for="nombre">Nombre: </label>
-            <input id="nombre" type="text">
-            <label for="minutos">Minutos: </label>
-            <input id="minutos" type="number">
-            <label for="posicion">Posicion: </label>
-            <input id="posicion" type="number">
-            <button id="btnAdd" type="button">Añadir</button>
-        </form>
-
-        <h3>Buscar Estacion</h3>
-        <form>
-            <label for="buscarNombre">Nombre: </label>
-            <input id="buscarNombre" type="text">
-            <button id="btnBuscar" type="button">Buscar</button>
-            <div id="estacionEncontrada"></div>
-        </form>
-
-        <h3>Borrar Estacion</h3>
-        <form>
-            <label for="borrarNombre">Nombre: </label>
-            <input id="borrarNombre" type="text">
-            <button id="btnBorrar" type="button">Borrar</button>
-        </form>
+    <form>
+        <h1>Calcular expresiones</h1>
+        <input id="operaciones" type="text">
         <br>
-
-        <div id="separation">
-            <form>
-                <label for="estacionInicial">Estacion Inicial:</label>
-                <input id="estacionInicial" type="text" value="Station 1">
-                <label for="tiempoInicio">Tiempo Inicio:</label>
-                <input id="tiempoInicio" type="number">
-                <label for="tiempoFin">Tiempo Fin:</label>
-                <input id="tiempoFin" type="number">
-                <br>
-                <br>
-                <button id="btnCrearRuta" class="btnCrearRuta" type="button">Ver Ruta</button>
-            </form>
-        </div>
-    </section>
-    
-    <aside>
-        <h2>Ruta</h2>
-        <article></article>
-    </aside>
-    <br>
-</body>
-<script src="./main.js" type="module"></script>
-
-</html>
-
-//Dinamicas Y Ordenadas//
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
-    <title>Listas Dinamicas Doblemente Enlazadas</title>
-</head>
-<h2>Agrega un Nuevo Articulo</h2>
-
-<body>
-    <section>
-        <h2>Opciones</h2>
-        <h3>Agregar Articulo</h3>
-        <form>
-            <label for="codigo">Codigo: </label>
-            <input id="codigo" type="number" value="001">
-            <label for="nombre">Nombre: </label>
-            <input id="nombre" type="text" value="Nombre">
-            <label for="precio">Precio: </label>
-            <input id="precio" type="number">
-            <label for="cantidad">Cantidad: </label>
-            <input id="cantidad" type="number" value="0">
-            <label for="Descripcion">Descripción: </label>
-            <input id="descripcion" type="text" value="Descripcion">
-            <label for="posicion">Posición: </label>
-            <input id="posicion" type="number" min="0">
-            <button id="btnAdd" type="button">Agregar</button>
-        </form>
-        <h3>Buscar producto</h3>
-        <form>
-            <label for="buscarCodigo">Codigo: </label>
-            <input id="buscarCodigo" type="number">
-            <button id="btnBuscar" type="button">Buscar</button>
-            <div id="productoEncontrado"></div>
-        </form>
-        <h3>Eliminar producto</h3>
-        <form>
-            <label for="eliminarCodigo">Codigo:</label>
-            <input id="eliminarCodigo" type="number">
-            <button id="btnEliminar">Eliminar</button>
-        </form>
         <br>
-        <div>
-            <button id="crearReporte" type="button">Crear reporte</button>
-            <button id="CrearReporteInverso" type="button">Crear reporte inverso</button>
-        </div>
-    </section>
-    <aside>
-        <h2>Repote</h2>
-        <article id="reporte"></article>
-    </aside>
+        <button id="btn" type="button">Calcular</button>
+        <br>
+        <br>
+    </form>
+    <h3 id="resultado"></h3>
 </body>
-<script src="./main.js" type="module"></script>
-
+<script src="./Main.js" type="module"></script>
 </html>
