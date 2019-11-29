@@ -1,89 +1,78 @@
 import Producto from "./Producto.js";
 
-export default class Expresiones {
+export default class Expresion {
     constructor() {
-        this._raiz = null;
-        this._Nodos = "";
+        this._root = null;
+        this._nodos = null;
     }
 
-    resolve(string) {
+    resolver(string) {
         let atributos = new Array();
-        for (let i = 0; i < string.longitud; i++) {
+
+        for (let i = 0; i < string.length; i++) {
             atributos.push(new Producto(string.charAt(i)));
         }
-
-        for (let i = 0; i < atributos.longitud; i++) {
-            if (atributos[i] === '+' || atributos[i] === '-') {
+        for (let i = 1; i < atributos.length - 1; i++) {
+            if (atributos[i].value === '*' || atributos[i].value === '/') {
                 atributos[i].izquierda = atributos[i - 1];
                 atributos[i].derecha = atributos[i + 1];
                 atributos.splice(i - 1, 1);
-                atributos.splice(i + 1, 1);
+                atributos.splice(i, 1);
+                i--;
+            }
+        }
+
+        for (let i = 1; i < atributos.length - 1; i++) {
+            if (atributos[i].value === '+' || atributos[i].value === '-') {
+                atributos[i].izquierda = atributos[i - 1];
+                atributos[i].derecha = atributos[i + 1];
+                atributos.splice(i - 1, 1);
+                atributos.splice(i, 1);
+                i--;
             }
         }
 
 
-        for (let i = 0; i < atributos.longitud; i++) {
-            if (atributos[i] === '*' || atributos[i] === '/') {
-                atributos[i].izquierda = atributos[i - 1];
-                atributos[i].derecha = atributos[i + 1];
-                atributos.splice(i - 1, 1);
-                atributos.splice(i + 1, 1);
+        this._stack = new Array();
+        this._preOrderRecursive(atributos[0]);
 
-                console.log('listo');
+
+        let stack = new Array();
+        let aux = 0;
+        for (let i = this._stack.length - 1; i >= 0; i--) {
+            switch (this._stack[i]) {
+                case '/':
+                    aux = stack.pop();
+                    aux = aux/stack.pop();
+                    stack.push(aux);
+                    break;
+                case '*':
+                        aux = stack.pop();
+                        aux = aux*stack.pop();
+                        stack.push(aux);
+                    break;
+                case '-':
+                        aux = stack.pop();
+                        aux = aux-stack.pop();
+                        stack.push(aux);
+                    break;
+                case '+':
+                        aux = stack.pop();
+                        aux = aux+stack.pop();
+                        stack.push(aux);
+                    break;
+                default:
+                    stack.push(Number(this._stack[i]));
             }
         }
-        console.log(atributos);
+        return stack[0];
     }
 
-    inOrder() {
-        this._Nodos = '';
-
-        if (this._raiz != null) {
-            this._inOrderRecursivo(this._raiz);
-        }
-
-        return this._Nodos;
-    }
-
-    _inOrderRecursivo(raiz) {
-        if (raiz != null) {
-            this._inOrderRecursivo(raiz.izquierda);
-            this._Nodos += raiz.toString() + '<br>';
-            this._inOrderRecursivo(raiz.derecha);
-        }
-    }
-
-    preOrder() {
-        this._Nodos = '';
-
-        if (this._raiz != null)
-            this._preOrderRecursivo(this._raiz);
-
-        return this._Nodos;
-    }
-
-    _preOrderRecursivo(raiz) {
-        if (raiz != null) {
-            this._Nodos += raiz.toString() + '<br>';
-            this._preOrderRecursivo(raiz.izquierda);
-            this._preOrderRecursivo(raiz.derecha);
-        }
-    }
-
-    postOrder() {
-        this._Nodos = '';
-
-        if (this._raiz != null)
-            this._postOrderRecursivo(this._raiz);
-
-        return this._Nodos;
-    }
-
-    _postOrderRecursivo(raiz) {
-        if (raiz != null) {
-            this._postOrderRecursivo(raiz.izquierda);
-            this._postOrderRecursivo(raiz.derecha);
-            this._Nodos += raiz.toString() + '<br>';
+    _preOrderRecursive(root) {
+        if (root != null) {
+            this._stack.push(root.value);
+            this._preOrderRecursive(root.izquierda);
+            this._preOrderRecursive(root.derecha);
         }
     }
 }
